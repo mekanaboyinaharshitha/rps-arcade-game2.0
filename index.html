@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MUTE BUTTON -->
+    <button id="muteBtn" onclick="toggleMute()" class="reset-btn">🔊 Mute BG</button>
+
+    <!-- START SCREEN -->
+    <div id="startScreen" class="start-screen">
+        <h1>🎮 Rock Paper Scissors</h1>
+        <p>How to Play:</p>
+        <ul class="instructions">
+            <li>🎮 Choose Rock, Paper, or Scissors.</li>
+            <li>🎯 Rock beats Scissors, Paper beats Rock, Scissors beats Paper.</li>
+            <li>💥 First to 5 wins the game!</li>
+            <li>🔥 Click Start Game to begin</li>
+        </ul>
+        <button onclick="startGame()" class="start-btn">Start Game</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div class="game" id="gameScreen" style="display:none;">
+        <h1>✊ 📄 ✂️ Rock Paper Scissors</h1>
+
+        <div class="score-board">
+            <p>👤 You: <span id="userScore">0</span></p>
+            <p>💻 Computer: <span id="computerScore">0</span></p>
+        </div>
+
+        <p>Choose your move:</p>
+        <div class="buttons">
+            <button onclick="playGame('rock', this)">✊ Rock</button>
+            <button onclick="playGame('paper', this)">📄 Paper</button>
+            <button onclick="playGame('scissors', this)">✂️ Scissors</button>
+        </div>
+
+        <p id="userChoice"></p>
+        <p id="computerChoice"></p>
+        <div id="result"></div>
+
+        <button class="reset-btn" onclick="resetGame()">🔄 Restart Game</button>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div id="gameOverScreen" class="start-screen" style="display:none;">
+        <h1 id="gameOverMessage"></h1>
+        <button onclick="resetGame()" class="start-btn">Play Again</button>
+    </div>
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
